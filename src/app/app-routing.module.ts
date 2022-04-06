@@ -11,7 +11,12 @@ const routes: Routes = [
   { path: "users/detail/:id", component: prs.UserDetailComponent },
   { path: "users/edit/:id", component: prs.UserEditComponent },
   { path: "login", component: prs.UserLoginComponent },
-  
+
+  { path: "vendors/list", component: prs.VendorListComponent },
+  { path: "vendors/create", component: prs.VendorCreateComponent },
+  { path: "vendors/detail/:id", component: prs.VendorDetailComponent },
+  { path: "vendors/edit/:id", component: prs.VendorEditComponent },
+
   { path: "home", component: core.HomeComponent },
   { path: "about", component: core.AboutComponent },
   { path: "**", component: core.E404Component }

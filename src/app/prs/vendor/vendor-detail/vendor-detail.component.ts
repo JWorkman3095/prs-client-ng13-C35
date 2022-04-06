@@ -1,19 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SystemService } from '../../system.service';
-import { UserSearchPipe } from '../user-search.pipe';
-import { User } from '../user.class';
-import { UserService } from '../user.service';
+import { Vendor } from '../vendor.class';
+import { VendorService } from '../vendor.service';
 
 @Component({
-  selector: 'app-user-detail',
-  templateUrl: './user-detail.component.html',
-  styleUrls: ['./user-detail.component.css']
+  selector: 'app-vendor-detail',
+  templateUrl: './vendor-detail.component.html',
+  styleUrls: ['./vendor-detail.component.css']
 })
-export class UserDetailComponent implements OnInit {
+export class VendorDetailComponent implements OnInit {
 
-  pageTitle: string = "User Detail";
-  user!: User;
+  pageTitle: string = "Vendor Detail";
+  vendor!: Vendor;
   showVerifyButton: boolean = false;
   get isAdmin() { 
     if(!this.sys.isLoggedIn) {
@@ -24,7 +23,7 @@ export class UserDetailComponent implements OnInit {
 
   constructor(
     private sys: SystemService,
-    private usrsvc: UserService,
+    private vndsvc: VendorService,
     private route: ActivatedRoute,
     private router: Router
   ) { }
@@ -33,20 +32,20 @@ export class UserDetailComponent implements OnInit {
     this.showVerifyButton = !this.showVerifyButton;
   }
   verifyRemove(): void {
-    this.usrsvc.remove(this.user.id).subscribe({
+    this.vndsvc.remove(this.vendor.id).subscribe({
       next: (res) => {
-        console.debug("User deleted!");
-        this.router.navigateByUrl("/users/list");
+        console.debug("Vendor deleted!");
+        this.router.navigateByUrl("/vendors/list");
       },
       error: (err) => console.error(err)
     });
   }
   ngOnInit(): void {
     let id = this.route.snapshot.params["id"];
-    this.usrsvc.get(id).subscribe({
+    this.vndsvc.get(id).subscribe({
       next: (res) => {
-        console.debug("User:", res);
-        this.user = res;
+        console.debug("Vendor:", res);
+        this.vendor = res;
       },
       error: (err) => console.error(err)
     });
