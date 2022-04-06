@@ -33,9 +33,16 @@ export class ProductListComponent implements OnInit {
     this.sortOrderAsc = true;
   }
 
+  addVendorName(products: Product[]) {
+    for(let p of products) {
+      p.vendorName = p.vendor.name;
+    }
+  }
+
   ngOnInit(): void {
     this.prdsvc.list().subscribe({
       next: (res) => {
+        this.addVendorName(res);
         console.debug(res);
         this.products = res;
       },
