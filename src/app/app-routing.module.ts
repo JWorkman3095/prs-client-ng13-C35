@@ -6,6 +6,11 @@ import * as prs from './prs/index';
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
 
+  { path: "products/list", component: prs.ProductListComponent },
+  { path: "products/create", component: prs.ProductCreateComponent },
+  { path: "products/detail/:id", component: prs.ProductDetailComponent },
+  { path: "products/edit/:id", component: prs.ProductEditComponent },
+
   { path: "users/list", component: prs.UserListComponent },
   { path: "users/create", component: prs.UserCreateComponent },
   { path: "users/detail/:id", component: prs.UserDetailComponent },

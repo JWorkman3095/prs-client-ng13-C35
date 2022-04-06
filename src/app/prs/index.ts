@@ -1,3 +1,9 @@
+export { ProductSearchPipe } from './product/product-search.pipe';
+export { ProductListComponent } from './product/product-list/product-list.component';
+export { ProductDetailComponent } from './product/product-detail/product-detail.component';
+export { ProductCreateComponent } from './product/product-create/product-create.component';
+export { ProductEditComponent } from './product/product-edit/product-edit.component';
+
 export { UserListComponent } from './user/user-list/user-list.component';
 export { UserDetailComponent } from './user/user-detail/user-detail.component';
 export { UserCreateComponent } from './user/user-create/user-create.component';

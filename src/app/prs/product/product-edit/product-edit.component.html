@@ -1,1 +1,50 @@
-<p>product-edit works!</p>
+<header></header>
+<app-menubar></app-menubar>
+<div id="component">
+    <div id="heading">
+        <span id="pageTitle">{{ pageTitle }}</span>
+    </div>
+    <main>
+        <table class="table table-striped table-sm" *ngIf="product">
+            <tbody>
+                <tr>
+                    <td>Id: </td>
+                    <td><input [(ngModel)]="product.id" type="number" disabled></td>
+                </tr>
+                <tr>
+                    <td>Part Nbr:</td>
+                    <td><input [(ngModel)]="product.partNbr" type="text" ></td>
+                </tr>
+                <tr>
+                    <td>Name:</td>
+                    <td><input [(ngModel)]="product.name" type="text" ></td>
+                </tr>
+                <tr>
+                    <td>Price:</td>
+                    <td><input [(ngModel)]="product.price" type="number" ></td>
+                </tr>
+                <tr>
+                    <td>Unit:</td>
+                    <td><input [(ngModel)]="product.unit" type="text" ></td>
+                </tr>
+                <tr>
+                    <td>Photo path:</td>
+                    <td><input [(ngModel)]="product.photoPath" type="text" ></td>
+                </tr>
+                <tr>
+                    <td>Vendor:</td>
+                    <td>
+                        <select [(ngModel)]="product.vendorId">
+                            <option *ngFor="let v of vendors" value="{{ v.id }}">{{ v.name }}</option>
+                        </select>
+                        
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <button (click)="save()" class="btn btn-primary">Save</button>
+        </div>
+    </main>
+</div>
+<footer></footer>
