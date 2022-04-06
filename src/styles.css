@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+input, select {
+    border-radius: 7px;
+}
+#component {
+    padding: 0 8px;
+}
+#pageTitle {
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-style: italic;
+}
+.borderless {
+    border-width: 0;
+}
+.clickable {
+    text-decoration: none;
+    padding: 0;
+}

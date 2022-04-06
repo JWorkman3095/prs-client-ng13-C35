@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SystemService } from '../../system.service';
 import { UserSearchPipe } from '../user-search.pipe';
 import { User } from '../user.class';
 import { UserService } from '../user.service';
@@ -10,14 +11,17 @@ import { UserService } from '../user.service';
 })
 export class UserListComponent implements OnInit {
 
-  tableHeadingStyle: string = "btn btn-link p-0";
+  tableHeadingStyle: string = "btn btn-link clickable";
 
   users!: User[];
+  get isAdmin() { return this.sys.isAdmin; }
 
   sortColumn: string = "lastname";
   sortOrderAsc: boolean = true; 
+  searchCriteria: string = "";
 
   constructor(
+    private sys: SystemService,
     private usrsvc: UserService
   ) { }
 
