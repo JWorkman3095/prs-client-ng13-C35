@@ -11,6 +11,7 @@ export { RequestCreateComponent } from './request/request-create/request-create.
 export { RequestEditComponent } from './request/request-edit/request-edit.component';
 export { RequestLinesComponent } from './request/request-lines/request-lines.component';
 export { RequestReviewsComponent } from './request/request-reviews/request-reviews.component';
+export { RequestReviewItemComponent } from './request/request-review-item/request-review-item.component';
 
 export { UserListComponent } from './user/user-list/user-list.component';
 export { UserDetailComponent } from './user/user-detail/user-detail.component';

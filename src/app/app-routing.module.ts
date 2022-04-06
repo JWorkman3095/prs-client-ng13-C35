@@ -15,6 +15,9 @@ const routes: Routes = [
   { path: "requests/create", component: prs.RequestCreateComponent },
   { path: "requests/detail/:id", component: prs.RequestDetailComponent },
   { path: "requests/edit/:id", component: prs.RequestEditComponent },
+  { path: "requests/lines/:id", component: prs.RequestLinesComponent },
+  { path: "requests/reviews", component: prs.RequestReviewsComponent },
+  { path: "requests/review/:id", component: prs.RequestReviewItemComponent },
 
   { path: "users/list", component: prs.UserListComponent },
   { path: "users/create", component: prs.UserCreateComponent },

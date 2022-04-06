@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from './user/user.class';
 
 @Injectable({
@@ -6,14 +7,11 @@ import { User } from './user/user.class';
 })
 export class SystemService {
 
-  _user: User | null = { 
-    id: 0, username: 'sa', password: 'sa', 
-    firstname: 'sa', lastname: 'sa', 
-    phone: '', email: '', 
-    isReviewer: true, isAdmin: true 
-  }
+  _user!: User | null; 
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   get isAdmin() {
     if(this._user == null) {
@@ -27,12 +25,18 @@ export class SystemService {
   }
 
   getLoggedInUser(): User | null { 
-    return this._user; 
+      return this._user;
   }
-  setLoggedInUser(user: User | null) {
+  setLoggedInUser(user: User) {
     this._user = user;
   }
   clearLoggedInUser() {
     this._user = null;
+  }
+
+  chkLogin(): void {
+    if(!this.isLoggedIn) {
+      this.router.navigateByUrl("/login");
+    }
   }
 }

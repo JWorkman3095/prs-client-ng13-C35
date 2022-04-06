@@ -29,6 +29,7 @@ export class RequestCreateComponent implements OnInit {
   ) { }
 
   save(): void {
+    this.request.userId = this.sys.getLoggedInUser()!.id;
     this.reqsvc.create(this.request).subscribe({
       next: (res) => {
         console.debug("Request created");
@@ -39,6 +40,7 @@ export class RequestCreateComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.sys.chkLogin();
   }
 
 }

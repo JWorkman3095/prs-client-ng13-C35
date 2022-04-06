@@ -30,6 +30,7 @@
                         <span *ngIf="isAdmin"> |
                             <a routerLink="/requests/edit/{{ r.id }}" class="clickable">Edit</a>
                         </span>
+                        | <a routerLink="/requests/lines/{{ r.id }}" class="clickable">Lines</a>
                     </td>
                 </tr>
             </tbody>
