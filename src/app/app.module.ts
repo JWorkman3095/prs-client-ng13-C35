@@ -20,7 +20,9 @@ import { BoolDisplayPipe } from './prs/bool-display.pipe';
     prs.VendorListComponent, prs.VendorDetailComponent, prs.VendorCreateComponent, prs.VendorEditComponent, 
     prs.VendorSearchPipe, 
     prs.ProductSearchPipe, prs.ProductListComponent, prs.ProductDetailComponent, prs.ProductCreateComponent, 
-    prs.ProductEditComponent
+    prs.ProductEditComponent, 
+    prs.RequestSearchPipe, prs.RequestListComponent, prs.RequestDetailComponent, prs.RequestCreateComponent, 
+    prs.RequestEditComponent, prs.RequestLinesComponent, prs.RequestReviewsComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule,

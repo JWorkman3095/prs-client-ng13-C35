@@ -11,6 +11,11 @@ const routes: Routes = [
   { path: "products/detail/:id", component: prs.ProductDetailComponent },
   { path: "products/edit/:id", component: prs.ProductEditComponent },
 
+  { path: "requests/list", component: prs.RequestListComponent },
+  { path: "requests/create", component: prs.RequestCreateComponent },
+  { path: "requests/detail/:id", component: prs.RequestDetailComponent },
+  { path: "requests/edit/:id", component: prs.RequestEditComponent },
+
   { path: "users/list", component: prs.UserListComponent },
   { path: "users/create", component: prs.UserCreateComponent },
   { path: "users/detail/:id", component: prs.UserDetailComponent },

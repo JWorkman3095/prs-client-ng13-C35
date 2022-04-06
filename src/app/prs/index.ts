@@ -4,6 +4,14 @@ export { ProductDetailComponent } from './product/product-detail/product-detail.
 export { ProductCreateComponent } from './product/product-create/product-create.component';
 export { ProductEditComponent } from './product/product-edit/product-edit.component';
 
+export { RequestSearchPipe } from './request/request-search.pipe';
+export { RequestListComponent } from './request/request-list/request-list.component';
+export { RequestDetailComponent } from './request/request-detail/request-detail.component';
+export { RequestCreateComponent } from './request/request-create/request-create.component';
+export { RequestEditComponent } from './request/request-edit/request-edit.component';
+export { RequestLinesComponent } from './request/request-lines/request-lines.component';
+export { RequestReviewsComponent } from './request/request-reviews/request-reviews.component';
+
 export { UserListComponent } from './user/user-list/user-list.component';
 export { UserDetailComponent } from './user/user-detail/user-detail.component';
 export { UserCreateComponent } from './user/user-create/user-create.component';
