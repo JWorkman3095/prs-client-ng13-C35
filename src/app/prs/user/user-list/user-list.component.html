@@ -3,7 +3,7 @@
 <div id="component">
     <div id="heading">
         <span id="pageTitle">User List</span> |
-        <a routerLink="/users/create">New</a> |
+        <span *ngIf="isAdmin"><a routerLink="/users/create">New</a> |</span>
         <input [(ngModel)]="searchCriteria" class="borderless" type="text" placeholder="Search">
     </div>
     <main>

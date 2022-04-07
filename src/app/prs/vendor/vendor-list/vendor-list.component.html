@@ -3,7 +3,7 @@
 <div id="component">
     <div id="heading">
         <span id="pageTitle">Vendor List</span> |
-        <a routerLink="/vendors/create">New</a> |
+        <span *ngIf="isAdmin"><a routerLink="/vendors/create">New</a> |</span>
         <input [(ngModel)]="searchCriteria" class="borderless" type="text" placeholder="Search">
     </div>
     <main>
