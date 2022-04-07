@@ -39,7 +39,7 @@ export class RequestLinesComponent implements OnInit {
     });
   }
   edit(reqline: Requestline): void {
-    this.router.navigateByUrl("/requestlines/edit/{{ reqline.id }}");
+    this.router.navigateByUrl(`/requestlines/edit/${reqline.id}`);
   }
   remove(reqline: Requestline): void {
     this.reqsvc.remove(reqline.id).subscribe({

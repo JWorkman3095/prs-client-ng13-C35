@@ -13,6 +13,9 @@ export { RequestLinesComponent } from './request/request-lines/request-lines.com
 export { RequestReviewsComponent } from './request/request-reviews/request-reviews.component';
 export { RequestReviewItemComponent } from './request/request-review-item/request-review-item.component';
 
+export { RequestlineCreateComponent } from './requestline/requestline-create/requestline-create.component';
+export { RequestlineEditComponent } from './requestline/requestline-edit/requestline-edit.component';
+
 export { UserListComponent } from './user/user-list/user-list.component';
 export { UserDetailComponent } from './user/user-detail/user-detail.component';
 export { UserCreateComponent } from './user/user-create/user-create.component';
