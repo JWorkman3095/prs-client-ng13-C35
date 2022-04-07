@@ -26,9 +26,11 @@
                     <td>{{ r.total | currency }}</td>
                     <td>{{ r.user.username }}</td>
                     <td>
-                        <a routerLink="/requests/detail/{{ r.id }}" class="clickable">Detail</a> |
-                        <a routerLink="/requests/edit/{{ r.id }}" class="clickable">Edit</a> |
-                        <a routerLink="/requests/lines/{{ r.id }}" class="clickable">Lines</a>
+                        <a routerLink="/requests/detail/{{ r.id }}" class="clickable">Detail</a>
+                        <span *ngIf="userId === r.userId || isAdmin">
+                            | <a routerLink="/requests/edit/{{ r.id }}" class="clickable">Edit</a> 
+                        </span>
+                        | <a routerLink="/requests/lines/{{ r.id }}" class="clickable">Lines</a>
                     </td>
                 </tr>
             </tbody>

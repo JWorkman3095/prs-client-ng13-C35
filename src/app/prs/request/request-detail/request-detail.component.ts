@@ -20,6 +20,7 @@ export class RequestDetailComponent implements OnInit {
     } 
     return this.sys.getLoggedInUser()?.isAdmin; 
   }
+  get userId() { return this.sys._user?.id; }
 
   constructor(
     private sys: SystemService,

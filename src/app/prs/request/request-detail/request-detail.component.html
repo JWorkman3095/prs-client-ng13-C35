@@ -37,7 +37,7 @@
                 </tr>
             </tbody>
         </table>
-        <div>
+        <div *ngIf="isAdmin || userId === request.userId">
             <button (click)="remove()" class="btn btn-danger">Delete</button>
             <span *ngIf="showVerifyButton">
                 | <button (click)="verifyRemove()" class="btn btn-danger">Verify Delete</button>

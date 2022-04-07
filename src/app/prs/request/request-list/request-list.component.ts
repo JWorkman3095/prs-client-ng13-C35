@@ -14,6 +14,7 @@ export class RequestListComponent implements OnInit {
 
   requests!: Request[];
   get isAdmin() { return this.sys.isAdmin; }
+  get userId() { return this.sys._user?.id; }
 
   sortColumn: string = "status";
   sortOrderAsc: boolean = true;
