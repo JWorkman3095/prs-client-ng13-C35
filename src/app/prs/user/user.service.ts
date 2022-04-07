@@ -8,7 +8,8 @@ import { User } from './user.class';
 })
 export class UserService {
 
-  baseUrl: string = "http://localhost:5000/api/users";
+  //baseUrl: string = "http://localhost:5000/api/users";
+  baseUrl: string = "http://doudsystems.net/prsdb/api/users";
 
   constructor(
     private http: HttpClient

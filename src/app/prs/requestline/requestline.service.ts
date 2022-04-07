@@ -8,7 +8,7 @@ import { Requestline } from './requestline.class';
 })
 export class RequestlineService {
 
-  baseUrl: string = "http://localhost:5000/api/Requestlines";
+  baseUrl: string = "http://doudsystems.net/prsdb/api/Requestlines";
 
   constructor(
     private http: HttpClient

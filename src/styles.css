@@ -3,6 +3,16 @@ input, select {
     border-radius: 7px;
     width: 190px;
 }
+footer {
+    position: absolute;
+    bottom: 0;
+    background-color: #454545;
+    color: silver;
+    font-size: 0.7rem;
+    width: 100%;
+    text-align: right;
+    padding: 0 5px;
+}
 #component {
     padding: 0 8px;
 }

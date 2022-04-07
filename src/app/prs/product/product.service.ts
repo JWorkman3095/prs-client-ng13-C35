@@ -8,7 +8,7 @@ import { Product } from './product.class';
 })
 export class ProductService {
 
-  baseUrl: string = "http://localhost:5000/api/products";
+  baseUrl: string = "http://doudsystems.net/prsdb/api/products";
 
   constructor(
     private http: HttpClient

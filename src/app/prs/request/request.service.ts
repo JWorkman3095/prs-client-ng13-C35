@@ -8,7 +8,7 @@ import { Request } from './request.class';
 })
 export class RequestService {
 
-  baseUrl: string = "http://localhost:5000/api/requests";
+  baseUrl: string = "http://doudsystems.net/prsdb/api/requests";
 
   constructor(
     private http: HttpClient

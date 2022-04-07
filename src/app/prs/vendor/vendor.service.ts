@@ -8,7 +8,7 @@ import { Vendor } from './vendor.class';
 })
 export class VendorService {
 
-  baseUrl: string = "http://localhost:5000/api/vendors";
+  baseUrl: string = "http://doudsystems.net/prsdb/api/vendors";
 
   constructor(
     private http: HttpClient

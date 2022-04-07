@@ -9,6 +9,7 @@ import * as core from './core/index';
 import * as prs from './prs/index';
 import { SortPipe } from './prs/sort.pipe';
 import { BoolDisplayPipe } from './prs/bool-display.pipe';
+import { FooterComponent } from './core/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { BoolDisplayPipe } from './prs/bool-display.pipe';
     prs.ProductEditComponent, 
     prs.RequestSearchPipe, prs.RequestListComponent, prs.RequestDetailComponent, prs.RequestCreateComponent, 
     prs.RequestEditComponent, prs.RequestLinesComponent, prs.RequestReviewsComponent, prs.RequestReviewItemComponent, 
-    prs.RequestlineCreateComponent, prs.RequestlineEditComponent
+    prs.RequestlineCreateComponent, prs.RequestlineEditComponent, FooterComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule,
