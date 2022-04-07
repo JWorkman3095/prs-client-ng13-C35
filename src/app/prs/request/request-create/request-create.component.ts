@@ -38,9 +38,10 @@ export class RequestCreateComponent implements OnInit {
       error: (err) => console.error(err)
     });
   }
-
+  
   ngOnInit(): void {
     this.sys.chkLogin();
+    this.request.user = this.sys.getLoggedInUser()!;
   }
 
 }

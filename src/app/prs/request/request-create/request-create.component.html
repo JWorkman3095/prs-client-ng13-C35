@@ -29,9 +29,9 @@
                 </tr>
                 <tr>
                     <td>Total:</td>
-                    <td><input [ngModel]="request.total | currency" type="number" disabled ></td>
+                    <td><input [ngModel]="request.total | currency" type="text" disabled ></td>
                 </tr>
-                <tr>
+                <tr *ngIf="request.user">
                     <td>Username:</td>
                     <td><input [ngModel]="request.user.username" type="text" disabled></td>
                 </tr>
