@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { SystemService } from '../system.service';
 import { Vendor } from './vendor.class';
 
 @Injectable({
@@ -8,10 +9,12 @@ import { Vendor } from './vendor.class';
 })
 export class VendorService {
 
-  baseUrl: string = "http://doudsystems.net/prsdb/api/vendors";
+  //baseUrl: string = "http://doudsystems.net/prsdb/api/vendors";
+  get baseUrl() { return `${this.sys.baseUrl}/api/vendors`}
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private sys: SystemService
   ) { }
 
   list(): Observable<Vendor[]> {

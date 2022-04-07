@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { SystemService } from '../system.service';
 import { User } from './user.class';
 
 @Injectable({
@@ -9,10 +10,12 @@ import { User } from './user.class';
 export class UserService {
 
   //baseUrl: string = "http://localhost:5000/api/users";
-  baseUrl: string = "http://doudsystems.net/prsdb/api/users";
+  //baseUrl: string = "http://doudsystems.net/prsdb/api/users";
+  get baseUrl() { return `${this.sys.baseUrl}/api/users`}
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private sys: SystemService
   ) { }
 
   login(usr: string, pwd: string): Observable<User> {

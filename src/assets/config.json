@@ -1,0 +1,6 @@
+{
+    "version": "1.0",
+    "server": "prs-server-net5-c35",
+    "client": "prs-client-ng13-c35",
+    "baseUrl": "http://localhost:5000"
+}

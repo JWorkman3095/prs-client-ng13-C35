@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppInitService } from '../app-init.service';
 import { User } from './user/user.class';
 
 @Injectable({
@@ -7,11 +8,19 @@ import { User } from './user/user.class';
 })
 export class SystemService {
 
+  get baseUrl() {
+    if(typeof this.appinit.config === "undefined") {
+      return "http://localhost:5000";
+    } else {
+      return this.appinit.config.baseUrl;
+    }
+  }
   _user!: User | null; 
 
   constructor(
+    private appinit: AppInitService,
     private router: Router
-  ) { }
+  ) {}
 
   get isAdmin() {
     if(this._user == null) {

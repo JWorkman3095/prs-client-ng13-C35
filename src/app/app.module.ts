@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -10,6 +10,15 @@ import * as prs from './prs/index';
 import { SortPipe } from './prs/sort.pipe';
 import { BoolDisplayPipe } from './prs/bool-display.pipe';
 import { FooterComponent } from './core/footer/footer.component';
+import { AppInitService } from './app-init.service';
+
+// app.module
+export function startupServiceFactory(
+  appinit: AppInitService
+) {
+  return () => appinit.getSettings();
+}
+
 
 @NgModule({
   declarations: [
@@ -30,7 +39,14 @@ import { FooterComponent } from './core/footer/footer.component';
     BrowserModule, FormsModule, HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    AppInitService, { 
+      provide: APP_INITIALIZER, 
+      useFactory: startupServiceFactory, 
+        deps: [AppInitService], 
+        multi: true 
+    }  
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { SystemService } from '../system.service';
 import { Requestline } from './requestline.class';
 
 @Injectable({
@@ -8,10 +9,13 @@ import { Requestline } from './requestline.class';
 })
 export class RequestlineService {
 
-  baseUrl: string = "http://doudsystems.net/prsdb/api/Requestlines";
+  //baseUrl: string = "http://doudsystems.net/prsdb/api/Requestlines";
+  get baseUrl() { return `${this.sys.baseUrl}/api/requestlines`}
+
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private sys: SystemService
   ) { }
 
   get(id: number): Observable<Requestline> {
