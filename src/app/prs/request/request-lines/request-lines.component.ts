@@ -4,6 +4,7 @@ import { SystemService } from '../../system.service';
 import { RequestService } from '../request.service';
 import { Request } from '../request.class';
 import { Requestline } from '../../requestline/requestline.class';
+import { RequestlineService } from '../../requestline/requestline.service';
 
 @Component({
   selector: 'app-request-lines',
@@ -12,7 +13,7 @@ import { Requestline } from '../../requestline/requestline.class';
 })
 export class RequestLinesComponent implements OnInit {
 
-  pageTitle: string = "Request Lines";
+  pageTitle: string = "Request Review Item";
   request!: Request;
   showVerifyButton: boolean = false;
   get isAdmin() { 
@@ -25,6 +26,7 @@ export class RequestLinesComponent implements OnInit {
   constructor(
     private sys: SystemService,
     private reqsvc: RequestService,
+    private reqlsvc: RequestlineService,
     private route: ActivatedRoute,
     private router: Router
   ) { }
@@ -32,17 +34,17 @@ export class RequestLinesComponent implements OnInit {
   review(): void {
     this.reqsvc.review(this.request).subscribe({
       next: (res) => {
-        console.debug("Review:");
+        console.debug("Request reviewed");
         this.refresh();
       },
-      error: (err) => console.error(err) 
+      error: (err) => console.error(err)
     });
   }
-  edit(reqline: Requestline): void {
-    this.router.navigateByUrl(`/requestlines/edit/${reqline.id}`);
+  edit(rl: Requestline): void {
+    this.router.navigateByUrl(`/requestlines/edit/${rl.id}`)
   }
-  remove(reqline: Requestline): void {
-    this.reqsvc.remove(reqline.id).subscribe({
+  remove(rl: Requestline): void {
+    this.reqlsvc.remove(rl.id).subscribe({
       next: (res) => {
         console.debug("Requestline removed");
         this.refresh();
